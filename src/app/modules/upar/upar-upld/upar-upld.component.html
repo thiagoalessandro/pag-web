@@ -1,0 +1,56 @@
+<app-breadcrumb (eventBreadcrumb)="receiverBreadcrumb($event)"></app-breadcrumb>
+
+<div class="form-container">
+
+  <div class="title-page">
+    Upload Arquivo
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <fieldset>
+    <legend>
+      <mat-icon>gps_not_fixed</mat-icon>
+      <span style="position:relative; left: 7px">Arraste e solte o arquivo no banco desejado</span>
+    </legend>
+
+    <br>
+
+
+    <div style="border: 1px solid #CCCCCC; padding: 20px; float: left; text-align: center">
+      <div style="width: 280px">
+        <div [fileUploadInputFor]="fileUploadQueue1" class="upload-drop-zone1">
+          <img
+            src="https://lh3.googleusercontent.com/CyP_f9VxfdTyixcWO_-2IW5cJ1M8adkqRrY9Wo_CkH0Ixj12qdg1SJHpuye-9n_YYqM"
+            height="150" width="150">
+        </div>
+        <div>
+          <mat-file-upload-queue #fileUploadQueue1
+                                 [fileAlias]="'file'"
+                                 [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'" multiple>
+            <mat-file-upload [file]="file" [id]="i"
+                             *ngFor="let file of fileUploadQueue1.files; let i = index"></mat-file-upload>
+          </mat-file-upload-queue>
+        </div>
+      </div>
+    </div>
+
+    <div style="border: 1px solid #CCCCCC; padding: 20px; float: left; margin-left: 15px; text-align: center">
+      <div style="width: 280px">
+        <div [fileUploadInputFor]="fileUploadQueue2" class="upload-drop-zone2">
+          <img src="https://catracalivre.com.br/wp-content/uploads/2017/03/bradesco.jpg" height="150" width="150">
+        </div>
+
+        <div>
+          <mat-file-upload-queue #fileUploadQueue2
+                                 [fileAlias]="'file'"
+                                 [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'" multiple>
+            <mat-file-upload [file]="file" [id]="i"
+                             *ngFor="let file of fileUploadQueue2.files; let i = index"></mat-file-upload>
+          </mat-file-upload-queue>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+</div>

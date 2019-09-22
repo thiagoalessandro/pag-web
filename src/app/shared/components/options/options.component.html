@@ -1,0 +1,8 @@
+<div class="form-container-button box-options-register">
+  <button mat-mini-fab color="primary" *ngFor="let option of listOptions"
+          (click)="navigateTo(option.operacao)"
+          [title]="option.operacao.nome"
+          [disabled]="disabledOption(option.operacao)">
+    <mat-icon>{{option.operacao.icone}}</mat-icon>
+  </button>
+</div>
