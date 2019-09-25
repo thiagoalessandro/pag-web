@@ -6,7 +6,7 @@ export const environment = {
   projectTitle: 'TCB - TOTVS CONNECT BANK',
   production: false,
   urlWs: 'http://localhost:8080',
-  contextResourceServer: 'tcb-api',
+  contextResourceServer: 'tcb-tcbapi',
   contextAuthorizationServer: 'oauth',
   authorizationClient: 'Y2xpZW50YXBwOiM0MjM1VGhXWVI=',
   contentTypeRequestWs: 'application/json',
